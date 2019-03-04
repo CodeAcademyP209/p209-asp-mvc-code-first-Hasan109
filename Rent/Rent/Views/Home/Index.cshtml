@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Rent.Models.Rents>
+
+<div class="container">
+
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th scope="col">Marka</th>
+            <th scope="col">Model</th>
+            <th scope="col">Mile</th>
+            <th scope="col">Description</th>
+            <th scope="col">Price</th>
+            <th scope="col">Image</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var car in Model)
+        {
+
+
+        <tr>
+            <td>@car.Marka</td>
+            <td>@car.Model</td>
+            <td>@car.Mile</td>
+            <td>@car.Desc</td>
+            <td>@car.Price</td>
+
+            <td>
+                <img style="width:100px" src="~/Image/@(car.Image != null ? car.Image:"no.png")" alt="Alternate Text" />
+            </td>
+            <td><a href="/Home/Delete?Id=@car.Id">Delete</a></td>
+
+        </tr>
+
+        }
+    </tbody>
+</table>
+
+
+
+</div>
